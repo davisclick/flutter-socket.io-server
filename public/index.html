@@ -18,10 +18,15 @@
             console.log('Perdimos conexión');
         });
 
-        socket.emit('mensaje', {nombre: 'Fernando'} );
+        //socket.emit('mensaje', {nombre: 'Fernando'} );
 
-        socket.on('mensaje', function( payLoad ) {
-            console.log( payLoad );
+        socket.on('nuevo-mensaje', function( payLoad ) {
+            console.log( 'Escuchando: ', payLoad );
+        });
+
+        socket.on('active-bands', function( payLoad ) {
+            console.clear();
+            console.table( payLoad );
         });
     </script>
 </body>
