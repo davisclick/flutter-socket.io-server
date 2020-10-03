@@ -2,6 +2,7 @@ const { io } = require('../index');
 const Band = require('../models/band');
 const Bands = require('../models/bands');
 
+//Adding bands
 const bands = new Bands();
 
 bands.addBand( new Band( 'Queen' ) );
@@ -17,6 +18,10 @@ io.on( 'connection', client => {
 
     client.on('disconnect', () => { 
         console.log( 'Client disconnected' );
+    });
+
+    client.on('flutter-message', ( payload ) => { 
+        console.log( payload );
     });
 
     client.on('vote-band', ( payLoad ) =>{
