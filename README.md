@@ -5,7 +5,9 @@ The objective of this project is to be a simple socket server. It is used by the
 ## Getting Started
 
 Install the dependencies:
-
+ ```
+	npm  install
+ ```
 
 Start the server:
  ```
