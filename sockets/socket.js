@@ -11,12 +11,12 @@ bands.addBand( new Band( 'Metallica' ) );
 
 //Sockets Messages
 io.on( 'connection', client => {
-    console.log( 'Cliente conectado' );
+    console.log( 'Client connected' );
 
     client.emit( 'active-bands', bands.getBands() );
 
     client.on('disconnect', () => { 
-        console.log( 'Cliente desconectado' );
+        console.log( 'Client disconnected' );
     });
 
     client.on('vote-band', ( payLoad ) =>{
