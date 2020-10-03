@@ -25,17 +25,20 @@ io.on( 'connection', client => {
     });
 
     client.on('vote-band', ( payLoad ) =>{
+        console.log( payLoad );
         bands.voteBand( payLoad.id );
         io.emit( 'active-bands', bands.getBands() );
     });
 
     client.on('add-band', ( payLoad ) =>{
+      console.log( payLoad );
       const newBand = new Band( payLoad.name );
       bands.addBand( newBand ); 
       io.emit( 'active-bands', bands.getBands() );
     });
 
     client.on('delete-band', ( payLoad ) =>{
+        console.log( payLoad );
         io.emit( 'active-bands', bands.deleteBand( payLoad.id) ) ;
     });
 });
