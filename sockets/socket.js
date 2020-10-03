@@ -24,9 +24,9 @@ io.on( 'connection', client => {
         io.emit( 'active-bands', bands.getBands() );
     });
 
-    client.on('emitir-mensaje', ( payLoad ) =>{
-        //console.log( 'Mensaje a enviar', payLoad);
-        //io.emit( 'nuevo-mensaje', payLoad);
-        client.broadcast.emit( 'nuevo-mensaje', payLoad);
+    client.on('add-band', ( payLoad ) =>{
+      const newBand = new Band( payLoad.name );
+      bands.addBand( newBand ); 
+      io.emit( 'active-bands', bands.getBands() );
     });
 });
