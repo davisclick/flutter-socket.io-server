@@ -29,4 +29,8 @@ io.on( 'connection', client => {
       bands.addBand( newBand ); 
       io.emit( 'active-bands', bands.getBands() );
     });
+
+    client.on('delete-band', ( payLoad ) =>{
+        io.emit( 'active-bands', bands.deleteBand( payLoad.id) ) ;
+    });
 });
