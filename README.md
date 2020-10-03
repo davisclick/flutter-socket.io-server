@@ -13,3 +13,7 @@ Start the server:
  ```
 	npm  run start:dev 
  ```
+
+## License
+
+  [MIT](LICENSE)
