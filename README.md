@@ -8,5 +8,6 @@ Install the dependencies:
 
 
 Start the server:
-
+ ```
 	npm  run start:dev 
+ ```
